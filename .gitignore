@@ -1,0 +1,5 @@
+/config/secrets/*.pem
+/var/
+/node_modules/
+/.env
+/.vscode

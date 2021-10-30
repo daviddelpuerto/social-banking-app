@@ -1,0 +1,10 @@
+{
+    "default": true,
+    "ALLOWED_METHODS": [
+        "GET", "POST", "PUT", "PATCH", "DELETE"
+    ],
+    "LOG": {
+        "DIR": "/var/log",
+        "FILENAME": "access.log"
+    }
+}
