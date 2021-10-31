@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import {
   celebrate, celebrateOptions, Joi, Segments,
 } from '../../../Shared/infrastructure/CelebrateValidator';
@@ -16,3 +14,10 @@ export const validateCreateUser = celebrate({
     balance: Joi.number().required(),
   }),
 }, celebrateOptions);
+
+export const validateLoginUser = celebrate({
+  [Segments.BODY]: Joi.object().keys({
+    email: Joi.string().email().required(),
+    password: Joi.string().required(),
+  }),
+});
