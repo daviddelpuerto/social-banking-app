@@ -12,9 +12,9 @@ const UsersSchema = new Schema({
     type: Types.String,
     required: [true, 'Last name is required'],
   },
-  birthdate: {
-    type: Types.Date,
-    required: [true, 'Birthdate is required'],
+  age: {
+    type: Types.Number,
+    required: [true, 'Age is required'],
   },
   email: {
     type: Types.String,
@@ -38,7 +38,7 @@ const UsersSchema = new Schema({
     required: [true, 'Account number is required'],
     minlength: 10,
   },
-  accountBalance: {
+  balance: {
     type: Types.Number,
     required: [true, 'Account balance is required'],
     validate: {
