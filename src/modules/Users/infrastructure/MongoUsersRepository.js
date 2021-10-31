@@ -12,4 +12,13 @@ export default class MongoUsersRepository {
 
     return record;
   }
+
+  findOneByEmail(email) {
+    return this.Model.findOne({ email });
+  }
+
+  async findUserPasswordByEmail(email) {
+    const user = await this.Model.findOne({ email }).select('password');
+    return user.password;
+  }
 }
