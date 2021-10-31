@@ -8,4 +8,8 @@ users.post('/',
   usersRoutesValidations.validateCreateUser,
   usersControllers.createUserController);
 
+users.post('/login',
+  usersRoutesValidations.validateLoginUser,
+  usersControllers.loginUserController);
+
 export default users;
