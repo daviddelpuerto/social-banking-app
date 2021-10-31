@@ -6,7 +6,7 @@ const logger = Container.get('logger');
 export default async function bootstrap() {
   return new Promise((resolve) => {
     logger.info('Starting application bootstrap process');
-    logger.info(`Server running on Node${process.version}`);
+    logger.info(`Detected Node ${process.version}`);
     const databaseConnectionInterval = setInterval(async () => {
       try {
         logger.info('Trying to estabilish database connection...');
