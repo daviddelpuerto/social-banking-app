@@ -3,10 +3,15 @@
  */
 
 import Bitnacle from 'bitnacle';
+import UsersModel from '../../src/Shared/infrastructure/persistence/mongo/models/UsersModel';
+import MongoUsersRepository from '../../src/modules/Users/infrastructure/MongoUsersRepository';
 
 export default function createDependencies() {
   // Container will load dependencies from this object
   return {
     logger: new Bitnacle(),
+    repositories: {
+      mongoUsersRepository: new MongoUsersRepository(UsersModel),
+    },
   };
 }
