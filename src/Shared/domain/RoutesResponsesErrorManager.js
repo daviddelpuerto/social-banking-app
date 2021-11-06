@@ -1,14 +1,16 @@
-const STATUS_CODES_MESSAGES = {
-  400: 'Bad Request',
-};
+import statusCodes from 'http-status';
 
 export default class RoutesResponsesErrorManager {
   static getResponse({ statusCode, message, validation }) {
     return {
       statusCode,
-      error: STATUS_CODES_MESSAGES[statusCode] || 'Validation failed',
+      error: this.getErrorMessage(statusCode),
       message,
       validation,
     };
+  }
+
+  static getErrorMessage(statusCode) {
+    return statusCodes[statusCode] || 'Validation failed';
   }
 }
