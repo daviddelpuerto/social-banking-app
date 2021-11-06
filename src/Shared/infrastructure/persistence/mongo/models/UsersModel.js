@@ -46,31 +46,25 @@ const UsersSchema = new Schema({
       message: 'You need to provide a valid amount for you account balance',
     },
   },
-  followers: {
-    type: Types.Map,
-    of: {
-      user: {
-        type: Types.ObjectId,
-        ref: 'Users',
-      },
+  followers: [
+    {
+      type: Types.ObjectId,
+      ref: 'Users',
     },
-    default: {},
-  },
-  following: {
-    type: Types.Map,
-    of: {
-      user: {
-        type: Types.ObjectId,
-        ref: 'Users',
-      },
+  ],
+  following: [
+    {
+      type: Types.ObjectId,
+      ref: 'Users',
     },
-    default: {},
-  },
-  connectionRequests: {
-    type: Types.ObjectId,
-    ref: 'Users',
-    select: false,
-  },
+  ],
+  connectionRequests: [
+    {
+      type: Types.ObjectId,
+      ref: 'Users',
+      select: false,
+    },
+  ],
   transactions: [
     {
       type: Types.ObjectId,
