@@ -21,3 +21,9 @@ export const validateLoginUser = celebrate({
     password: Joi.string().required(),
   }),
 });
+
+export const followUser = celebrate({
+  [Segments.PARAMS]: Joi.object().keys({
+    identifier: Joi.string().disallow('null', 'undefined').required(),
+  }),
+});
