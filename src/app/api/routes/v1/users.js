@@ -22,4 +22,8 @@ users.put('/:userId/follow/accept',
   validateToken,
   usersControllers.acceptFollowRequestController);
 
+users.put('/:userId/follow/decline',
+  validateToken,
+  usersControllers.declineFollowRequestController);
+
 export default users;
