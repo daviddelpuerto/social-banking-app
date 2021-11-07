@@ -18,4 +18,8 @@ users.post('/:identifier/follow',
   usersRoutesValidations.followUser,
   usersControllers.followUserController);
 
+users.put('/:userId/follow/accept',
+  validateToken,
+  usersControllers.acceptFollowRequestController);
+
 export default users;
