@@ -26,4 +26,8 @@ users.put('/:userId/follow/decline',
   validateToken,
   usersControllers.declineFollowRequestController);
 
+users.delete('/:userId/follow',
+  validateToken,
+  usersControllers.removeFollowerController);
+
 export default users;
