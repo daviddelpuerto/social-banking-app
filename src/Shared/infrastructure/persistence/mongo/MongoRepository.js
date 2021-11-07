@@ -16,4 +16,12 @@ export default class MongoRepository {
     }
     return false;
   }
+
+  findById(id) {
+    if (this.isValidObjectId(id)) {
+      return this.Model.findById(id);
+    }
+
+    return false;
+  }
 }
