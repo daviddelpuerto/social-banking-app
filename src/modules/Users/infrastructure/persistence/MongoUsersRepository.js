@@ -11,7 +11,12 @@ export default class MongoUsersRepository extends MongoRepository {
     return record;
   }
 
-  findOneByEmail(email) {
+  findOneByEmail(email, includeAll = false) {
+    if (includeAll) {
+      return this.Model
+        .findOne({ email })
+        .select('firstName lastName age email accountType accountNumber balance followers following connectionRequests transactions');
+    }
     return this.Model.findOne({ email });
   }
 
