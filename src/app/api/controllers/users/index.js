@@ -3,6 +3,7 @@ import followUserController from './users.follow';
 import loginUserController from './users.login';
 import acceptFollowRequestController from './users.acceptFollowRequest';
 import declineFollowRequestController from './users.declineFollowRequest';
+import removeFollowerController from './users.removeFollower';
 
 export default {
   createUserController,
@@ -10,4 +11,5 @@ export default {
   loginUserController,
   acceptFollowRequestController,
   declineFollowRequestController,
+  removeFollowerController,
 };
