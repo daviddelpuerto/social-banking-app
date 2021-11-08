@@ -1,6 +1,6 @@
 import { Container } from 'typedi';
 import UserNotFound from '../domain/errors/UserNotFound';
-import AlreadyRequestedToFollowUser from '../domain/errors/AlreadyRequestedToFollowUser';
+import AlreadyFollowingUser from '../domain/errors/AlreadyFollowingUser';
 
 const { mongoUsersRepository } = Container.get('repositories');
 
@@ -13,13 +13,13 @@ export default async function acceptFollowRequest({ userEmailAcceptingTheRequest
 
   const userAcceptingTheConnection = await mongoUsersRepository.findOneByEmail(userEmailAcceptingTheRequest, true);
 
-  const followAlreadyRequested = await mongoUsersRepository.followAlreadyRequested({
+  const userAlreadyFollowing = await mongoUsersRepository.userAlreadyFollowing({
     requesterUser: user,
     userToFollow: userAcceptingTheConnection,
   });
 
-  if (followAlreadyRequested) {
-    throw new AlreadyRequestedToFollowUser();
+  if (userAlreadyFollowing) {
+    throw new AlreadyFollowingUser();
   }
 
   userAcceptingTheConnection.connectionRequests.pull(userId);
