@@ -30,4 +30,8 @@ users.delete('/:userId/follow',
   validateToken,
   usersControllers.removeFollowerController);
 
+users.get('/me',
+  validateToken,
+  usersControllers.getUserDataController);
+
 export default users;
