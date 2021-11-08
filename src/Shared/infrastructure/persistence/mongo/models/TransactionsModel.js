@@ -7,10 +7,12 @@ const TransactionsSchema = new Schema({
   sender: {
     type: Types.ObjectId,
     ref: 'Users',
+    required: true,
   },
   receiver: {
     type: Types.ObjectId,
     ref: 'Users',
+    required: true,
   },
   balance: {
     type: Types.Number,
