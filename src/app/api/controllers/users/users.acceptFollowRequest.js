@@ -2,7 +2,7 @@ import { Container } from 'typedi';
 import httpStatus from 'http-status';
 import acceptFollowRequest from '../../../../modules/Users/application/acceptFollowRequest';
 import UserNotFound from '../../../../modules/Users/domain/errors/UserNotFound';
-import AlreadyRequestedToFollowUser from '../../../../modules/Users/domain/errors/AlreadyRequestedToFollowUser';
+import AlreadyFollowingUser from '../../../../modules/Users/domain/errors/AlreadyFollowingUser';
 import RoutesResponsesErrorManager from '../../../../Shared/domain/RoutesResponsesErrorManager';
 
 const logger = Container.get('logger');
@@ -22,7 +22,7 @@ export default async (req, res) => {
 
     if (error instanceof UserNotFound) {
       return res.status(httpStatus.NOT_FOUND).json(RoutesResponsesErrorManager.getResponse(error));
-    } if (error instanceof AlreadyRequestedToFollowUser) {
+    } if (error instanceof AlreadyFollowingUser) {
       return res.status(httpStatus.BAD_REQUEST).json(RoutesResponsesErrorManager.getResponse(error));
     }
 
