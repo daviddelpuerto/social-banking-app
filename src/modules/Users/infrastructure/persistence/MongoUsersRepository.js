@@ -41,4 +41,11 @@ export default class MongoUsersRepository extends MongoRepository {
       ],
     });
   }
+
+  userAlreadyFollowing({ requesterUser, userToFollow }) {
+    return this.Model.findOne({
+      _id: userToFollow,
+      followers: requesterUser,
+    });
+  }
 }
