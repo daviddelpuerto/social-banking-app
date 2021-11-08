@@ -7,6 +7,7 @@ import UsersModel from '../../src/Shared/infrastructure/persistence/mongo/models
 import TransactionsModel from '../../src/Shared/infrastructure/persistence/mongo/models/TransactionsModel';
 import MongoUsersRepository from '../../src/modules/Users/infrastructure/persistence/MongoUsersRepository';
 import MongoTransactionsRepository from '../../src/modules/Transactions/infrastructure/persistence/MongoTransactionsRepository';
+import CSVTransactionsRepository from '../../src/modules/Transactions/infrastructure/persistence/CSVTransactionsRepository';
 
 export default function createDependencies() {
   // Container will load dependencies from this object
@@ -15,6 +16,7 @@ export default function createDependencies() {
     repositories: {
       mongoUsersRepository: new MongoUsersRepository(UsersModel),
       mongoTransactionsRepository: new MongoTransactionsRepository(TransactionsModel),
+      csvTransactionsRepository: new CSVTransactionsRepository(),
     },
   };
 }
