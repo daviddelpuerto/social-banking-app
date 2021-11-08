@@ -49,7 +49,7 @@ export default class MongoUsersRepository extends MongoRepository {
     });
   }
 
-  getUserData(email) {
+  getUserDataByEmail(email) {
     return this.Model.findOne({ email })
       .populate('followers', ['firstName', 'age', 'accountNumber']);
   }
