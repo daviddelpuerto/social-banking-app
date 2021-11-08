@@ -1,5 +1,5 @@
 import { Container } from 'typedi';
-import UserNotFound from '../domain/errors/UserNotFound';
+import UserNotFound from '../../../Shared/domain/Users/domain/errors/UserNotFound';
 
 const { mongoUsersRepository } = Container.get('repositories');
 

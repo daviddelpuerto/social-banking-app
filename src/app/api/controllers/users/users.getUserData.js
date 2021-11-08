@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import httpStatus from 'http-status';
 import getUserData from '../../../../modules/Users/application/getUserData';
-import UserNotFound from '../../../../modules/Users/domain/errors/UserNotFound';
+import UserNotFound from '../../../../Shared/domain/Users/domain/errors/UserNotFound';
 import RoutesResponsesErrorManager from '../../../../Shared/domain/RoutesResponsesErrorManager';
 
 const logger = Container.get('logger');

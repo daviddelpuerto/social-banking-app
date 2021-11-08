@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import httpStatus from 'http-status';
 import acceptFollowRequest from '../../../../modules/Users/application/acceptFollowRequest';
-import UserNotFound from '../../../../modules/Users/domain/errors/UserNotFound';
+import UserNotFound from '../../../../Shared/domain/Users/domain/errors/UserNotFound';
 import AlreadyFollowingUser from '../../../../modules/Users/domain/errors/AlreadyFollowingUser';
 import RoutesResponsesErrorManager from '../../../../Shared/domain/RoutesResponsesErrorManager';
 
