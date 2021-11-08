@@ -26,7 +26,7 @@ export default class MongoUsersRepository extends MongoRepository {
   }
 
   findOneByIdOrAccountNumber(identifier) {
-    const selectFields = ['email', 'connectionRequests'];
+    const selectFields = 'firstName lastName age email accountType accountNumber balance followers following connectionRequests transactions';
     if (this.isValidObjectId(identifier)) {
       return this.Model.findOne({ _id: identifier }).select(selectFields);
     }
