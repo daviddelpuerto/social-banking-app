@@ -48,4 +48,9 @@ export default class MongoUsersRepository extends MongoRepository {
       followers: requesterUser,
     });
   }
+
+  getUserData(email) {
+    return this.Model.findOne({ email })
+      .populate('followers', ['firstName', 'age', 'accountNumber']);
+  }
 }
